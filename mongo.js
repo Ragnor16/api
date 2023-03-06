@@ -17,8 +17,27 @@ const newSchema=new mongoose.Schema({
         required:true
     }
 })
+const productSchema=new mongoose.Schema({
+    productName:{
+        type:String,
+        required:true
+    },
+    productDes:{
+        type:String,
+        required:true
+    },
+    status:{
+        type:Boolean,
+        default:true
+    }
+})
 
 const collection = mongoose.model('Collection',newSchema)
+const Addproduct = mongoose.model('Addproduct',productSchema)
+
+
 
 module.exports=collection;
+module.exports=Addproduct;
+
 
